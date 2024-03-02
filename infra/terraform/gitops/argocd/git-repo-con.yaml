@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: private-modern-data-stack
+  namespace: gitops
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/WesleyJw/modern-data-stack.git
+  password: XXX
+  username: not-used
