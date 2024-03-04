@@ -1,6 +1,15 @@
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
-  - role: control-plane
-  - role: worker
-  - role: worker
+- role: control-plane
+  extraMounts:
+  - hostPath: /home/wesley/Minio/modern-data-stack/data
+    containerPath: /data
+- role: worker
+  extraMounts:
+  - hostPath: /home/wesley/Minio/modern-data-stack/data
+    containerPath: /data
+- role: worker
+  extraMounts:
+  - hostPath: /home/wesley/Minio/modern-data-stack/data
+    containerPath: /data

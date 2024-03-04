@@ -1,0 +1,8 @@
+apiVersion: directpv.min.io/v1alpha1
+kind: DirectPVNode
+metadata:
+  name: directpvnode-modern-stack-worker
+spec:
+  nodeName: modern-stack-worker
+  volumePath: "/home/wesley/Minio/modern-data-stack/data"
+  storageClass: "directpv-sc-worker"

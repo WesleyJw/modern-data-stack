@@ -1,2 +1,6 @@
 # terraform
 infra/terraform/gitops/argocd/variables.tf
+infra/terraform/gitops/argocd/terraform.tfstate
+infra/terraform/gitops/argocd/.terraform
+infra/terraform/gitops/argocd/.terraform.lock.hcl
+infra/terraform/gitops/argocd/*.tfstate
