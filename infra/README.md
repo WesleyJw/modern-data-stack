@@ -236,7 +236,48 @@ argocd cluster add kind-modern-stack
 kubectl apply -f git-repo-con.yaml -n gitops
 ```
 
+## Installation of Ingress Nginx
 
+[Ingress Nginx](https://kubernetes.github.io/ingress-nginx/) is an Ingress controller for kubernetes using Nginx as a reverse proxy and load balancer. It is the most popular Ingress controller for kubernetes. He is reliable and easy to use, providing load balancing, SSL termination, and name-based virtual routing features. However, it does not support dynamic configurations, so an NGINX reload is required whenever a new Kubernetes endpoint is defined.The ingress controller is for pointing DNS names to our cluster and then routing them to the proper pods inside the cluster. So this is HTTP and HTTPS traffic only.
+
+```bash
+helm upgrade --install ingress-nginx ingress-nginx --version 4.9.1 --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace --set controller.replicaCount=1 --set controller.ingressClassResource.default=true
+
+# Explore created resources
+kubectl get ingressclass
+kubectl get pods -A
+kubectl get pods --namespace=ingress-nginx
+```
+
+Now We have to create the roles to point our DNS. 
+
+- Ingress Rules: The administrator defines Ingress rules in YAML resources, which specify how external traffic should be routed to services within the cluster. The rules typically include information such as hosts and paths to be mapped to specific services.
+
+- Ingress Controller: The NGINX Ingress Controller continuously monitors Ingress resources in Kubernetes to detect changes. When new Ingress rules are created, updated, or deleted, the Ingress Controller reacts to these changes and updates the NGINX configuration accordingly.
+
+- NGINX Configuration: Based on the Ingress rules, the Ingress Controller generates and updates the NGINX configuration. This may include defining virtual hosts, redirection rules, load balancing, SSL termination, and other configurations necessary to route traffic correctly.
+
+- Reverse Proxy: NGINX acts as a reverse proxy, receiving incoming requests from the external world and forwarding them to the appropriate services within the cluster based on the configured Ingress rules.
+
+- Traffic Routing: Based on the hosts and paths defined in the Ingress rules, NGINX routes Internet traffic to the pods corresponding to the specified services.
+
+Essentially, the NGINX Ingress Controller simplifies and automates the process of configuring NGINX to handle external traffic routing to services within the Kubernetes cluster, allowing developers and system administrators to easily define traffic routing rules declaratively using Ingress resources.
+
+- How to Create a rule in my local machine?
+
+```bash
+sudo nano /etc/hosts 
+
+  GNU nano 4.8                                                                                 /etc/hosts                                                                                 Modified  
+127.0.0.1       localhost
+127.0.1.1       wesley-ds
+
+# Add by Kubernetes
+# ips to nginx from modern-data-stack cluster pool
+172.18.0.51     modern_data_stack.com.br          # add this line
+```
+
+The following steps are create the `.yaml` file to specify the pods with service.
 
 
 ## Install MinIo Storage Service
