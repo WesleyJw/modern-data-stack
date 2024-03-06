@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio-operator
+  namespace: gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/WesleyJw/modern-data-stack.git'
+    path: infra/src/helm-charts/minio-operator
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+      name: 'kind-modern-stack'
+      namespace: deepstorage
+      server: ''
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

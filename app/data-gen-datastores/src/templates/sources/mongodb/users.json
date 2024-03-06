@@ -1,0 +1,41 @@
+{
+  "id": 1622,
+  "uid": "509ee517-edff-4840-9844-97d21dfb3c94",
+  "password": "wrhzVg2ZG4",
+  "first_name": "Travis",
+  "last_name": "Armstrong",
+  "username": "travis.armstrong",
+  "email": "travis.armstrong@email.com",
+  "gender": "Genderfluid",
+  "phone_number": "+245 1-476-520-6780",
+  "social_insurance_number": "624634721",
+  "date_of_birth": "1974-03-20",
+  "employment": {
+    "title": "Customer Marketing Assistant",
+    "key_skill": "Work under pressure"
+  },
+  "address": {
+    "city": "Haaghaven",
+    "street_name": "Else Squares",
+    "street_address": "60336 Wolff Fort",
+    "zip_code": "46382-1810",
+    "state": "Nebraska",
+    "country": "United States",
+    "coordinates": {
+      "lat": -11.9452923565,
+      "lng": -103.3439354161
+    }
+  },
+  "credit_card": {
+    "cc_number": "6771-8917-8798-4646"
+  },
+  "subscription": {
+    "plan": "Silver",
+    "status": "Pending",
+    "payment_method": "Cheque",
+    "term": "Payment in advance"
+  },
+  "user_id": 3378,
+  "dt_current_timestamp": "2023-12-12 18:32:28.343",
+  "cpf": "944.759.674-65"
+}

@@ -1,0 +1,47 @@
+{
+  "provider": "google_oauth2",
+  "uid": "388992832",
+  "info": {
+    "name": "Charles West",
+    "first_name": "Charles",
+    "last_name": "West",
+    "email": "west_charles@example.com",
+    "image": "https://via.placeholder.com/300x300.png"
+  },
+  "credentials": {
+    "token": "e6dce23dbe70747afe487f55352d006a",
+    "refresh_token": "996031f73ec8718bccfb6996caa41d6d",
+    "expires_at": 1720765453,
+    "expires": true
+  },
+  "extra": {
+    "raw_info": {
+      "sub": "388992832",
+      "email": "west_charles@example.com",
+      "email_verified": "false",
+      "name": "Charles West",
+      "given_name": "Charles",
+      "family_name": "West",
+      "profile": "https://plus.google.com/388992832",
+      "picture": "https://via.placeholder.com/300x300.png",
+      "gender": "male",
+      "birthday": "1936-10-08",
+      "locale": "en",
+      "hd": "gottlieb, altenwerth and walter.com"
+    },
+    "id_info": {
+      "iss": "accounts.google.com",
+      "at_hash": "a519822c8172f61a9909d20811d5ff71",
+      "email_verified": true,
+      "sub": "6300422406793043868257744881",
+      "azp": "APP_ID",
+      "email": "west_charles@example.com",
+      "aud": "APP_ID",
+      "iat": 1709436137,
+      "exp": 1709909367,
+      "openid_id": "https://www.google.com/accounts/o8/id?id=388992832"
+    }
+  },
+  "user_id": 5173,
+  "timestamp": "2023-12-08 18:49:03.040"
+}

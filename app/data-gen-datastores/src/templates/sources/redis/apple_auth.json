@@ -1,0 +1,31 @@
+{
+  "provider": "apple",
+  "uid": "391457.b301b77185aaa0b3aad90a04982b9b80.3395",
+  "info": {
+    "sub": "391457.b301b77185aaa0b3aad90a04982b9b80.3395",
+    "email": "chance_nolan@example.net",
+    "first_name": "Chance",
+    "last_name": "Nolan"
+  },
+  "credentials": {
+    "token": "ed6d40ceb2ea7ab374a064d80dd8c6db",
+    "refresh_token": "778672a6cda17435fe4a4d4f5723d53d",
+    "expires_at": 1712282889,
+    "expires": true
+  },
+  "extra": {
+    "raw_info": {
+      "iss": "https://appleid.apple.com",
+      "aud": "CLIENT_ID",
+      "exp": 1730352415,
+      "iat": 1725936737,
+      "sub": "391457.b301b77185aaa0b3aad90a04982b9b80.3395",
+      "at_hash": "c81216e257e6ae0cb17c08799d89b1f3",
+      "auth_time": 1728345871,
+      "email": "chance_nolan@example.net",
+      "email_verified": true
+    }
+  },
+  "user_id": 5173,
+  "timestamp": "2023-12-08 18:49:03.040"
+}

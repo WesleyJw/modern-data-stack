@@ -1,0 +1,55 @@
+{
+  "provider": "linkedin",
+  "uid": "144857",
+  "info": {
+    "name": "Darline Wintheiser",
+    "email": "darline_wintheiser@example.net",
+    "nickname": "Darline Wintheiser",
+    "first_name": "Darline",
+    "last_name": "Wintheiser",
+    "location": "Pauleneshire, Iowa",
+    "description": "Dolor minima similique accusamus.",
+    "image": "https://via.placeholder.com/300x300.png",
+    "phone": "615.967.1237 x192",
+    "headline": "Dolor minima similique accusamus.",
+    "industry": "Shoes & Industrial",
+    "urls": {
+      "public_profile": "http://www.linkedin.com/in/darlinewintheiser"
+    }
+  },
+  "credentials": {
+    "token": "7fee9227b5ae20962d7ef9e10157c73f",
+    "secret": "c14422e5e43922831b5f62c4a9a1b86c"
+  },
+  "extra": {
+    "access_token": {
+      "token": "7fee9227b5ae20962d7ef9e10157c73f",
+      "secret": "c14422e5e43922831b5f62c4a9a1b86c",
+      "consumer": null,
+      "params": {
+        "oauth_token": "7fee9227b5ae20962d7ef9e10157c73f",
+        "oauth_token_secret": "c14422e5e43922831b5f62c4a9a1b86c",
+        "oauth_expires_in": 1722745563,
+        "oauth_authorization_expires_in": 1732404626
+      },
+      "response": null
+    },
+    "raw_info": {
+      "firstName": "Darline",
+      "headline": "Dolor minima similique accusamus.",
+      "id": "144857",
+      "industry": "Shoes & Industrial",
+      "lastName": "Wintheiser",
+      "location": {
+        "country": {
+          "code": "nc"
+        },
+        "name": "Juliside"
+      },
+      "pictureUrl": "https://via.placeholder.com/300x300.png",
+      "publicProfileUrl": "http://www.linkedin.com/in/darlinewintheiser"
+    }
+  },
+  "user_id": 5173,
+  "timestamp": "2023-12-08 18:49:03.040"
+}

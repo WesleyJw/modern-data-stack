@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: airflow
+  namespace: gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/owshq-academy/ws-stack-dados-k8s.git'
+    path: infra/src/helm-charts/airflow
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    name: 'orion-development'
+    namespace: orchestrator
+    server: ''
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,15 @@
+{
+  "user_id": 3808,
+  "vehicle_id": 7146,
+  "time_stamp": 1543459448460,
+  "source": "Back Bay",
+  "destination": "South Station",
+  "distance": 1.41,
+  "price": 13.5,
+  "surge_multiplier": 1.0,
+  "id": "ae64b39c-989c-4357-b496-8a94a433dad6",
+  "product_id": "lyft_plus",
+  "name": "Lyft XL",
+  "cab_type": "Lyft",
+  "dt_current_timestamp": "2023-12-12 18:32:28.340"
+}
