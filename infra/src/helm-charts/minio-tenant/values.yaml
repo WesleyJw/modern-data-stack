@@ -72,7 +72,7 @@ tenant:
       ## Configure Runtime Class
       # runtimeClassName: ""
   ## Mount path where PV will be mounted inside container(s).
-  mountPath: /home/wesley/Minio/modern-data-stack/data
+  mountPath: /export
   ## Sub path inside Mount path where MinIO stores data.
   ## WARNING:
   ## We recommend you to keep the same mountPath and the same subPath once the
