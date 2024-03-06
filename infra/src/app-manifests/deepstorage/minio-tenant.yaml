@@ -6,14 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/owshq-academy/ws-stack-dados-k8s.git'
+    repoURL: 'https://github.com/WesleyJw/modern-data-stack.git'
     path: infra/src/helm-charts/minio-tenant
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
   destination:
-      name: 'orion-development'
+      name: 'kind-modern-stack'
       namespace: deepstorage
       server: ''
   syncPolicy:
