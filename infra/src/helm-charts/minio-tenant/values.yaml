@@ -112,7 +112,10 @@ tenant:
   #   - name: my-minio-bucket
   #     objectLock: false        # optional
   #     region: us-east-1        # optional
-  buckets: [ ]
+  buckets: 
+    - name: landing
+    - name: metastore
+    - name: trino
   ## List of secret names to use for generating MinIO users during tenant provisioning
   users: [ ]
   ## PodManagement policy for MinIO Tenant Pods. Can be "OrderedReady" or "Parallel"
