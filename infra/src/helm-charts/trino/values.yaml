@@ -13,7 +13,7 @@ imagePullSecrets:
   - name: registry-credentials
 
 server:
-  workers: 3
+  workers: 2
   node:
     environment: production
     dataDir: /data/trino
