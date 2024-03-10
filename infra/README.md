@@ -280,5 +280,56 @@ sudo nano /etc/hosts
 The following steps are create the `.yaml` file to specify the pods with service.
 
 
-## Install MinIo Storage Service
+## Install MinIo Storage Operator
 
+MinIO is an open-source, distributed object storage software designed to be scalable, high-performance, and highly available. It is capable of storing and retrieving large volumes of unstructured data such as images, videos, documents, and other file types. MinIO implements the Amazon Web Services (AWS) S3 object storage protocol, making it compatible with many tools and applications that use this protocol.
+
+```bash
+kubectl apply -f app-manifests/deepstorage/minio-operator.yaml
+```
+
+## Install MinIo Tenant
+
+MinIO Tenant is a more recent feature of MinIO that provides the ability to share a single MinIO cluster among multiple teams, departments, or clients. It offers data and resource isolation for each tenant, allowing different groups of users to share the same storage environment without compromising security or performance. MinIO Tenant simplifies data management in multi-tenant environments by providing efficient and scalable features for tenant creation, isolation, access control, and monitoring.
+
+```bash
+kubectl apply -f app-manifests/deepstorage/minio-tenant.yaml
+```
+
+## Install Hive Metastore
+
+The Hive Metastore is a key component of Apache Hive, a data warehousing tool built on the Hadoop framework. The Hive Metastore serves as a centralized metadata repository that stores information about the data stored in the Hadoop Distributed File System (HDFS) or another Hadoop-compatible storage system. It maintains records of data schemas, physical file locations, table statistics, and other information necessary for executing SQL queries on this data.
+
+In simple terms, the Hive Metastore functions as a metadata catalog for Hive, enabling users to query and analyze data stored in Hadoop similar to a relational database. It provides an abstraction layer between the physical data stored and the SQL queries executed by users, allowing users to focus on query logic rather than dealing directly with data storage and location details.
+
+Additionally, the Hive Metastore supports advanced features such as table partitioning, dynamic schema management, and data access control, making it a crucial component in big data infrastructure for data analysis at scale.
+
+Regarding how to use Hive Metastore with MinIO, MinIO itself doesn't directly integrate with Hive Metastore out of the box. However, MinIO can serve as a storage backend for Hadoop-based solutions like Hive. You can configure Hive to use MinIO as its storage layer by setting up MinIO as an external storage system accessible via its S3-compatible API. Then, you can configure Hive to store its data on MinIO by specifying the appropriate endpoint, access credentials, and bucket details in the Hive configuration. This setup allows you to leverage the scalability and performance of MinIO storage while benefiting from the data processing capabilities of Hive.
+
+```shell
+kubectl apply -f app-manifests/metastore/hive-metastore.yaml
+```
+
+## Install Trino
+
+Trino is an open-source distributed SQL query engine designed for fast and interactive analytics on large-scale datasets. It was originally developed by Facebook and later open-sourced. Trino allows users to run ad-hoc SQL queries across multiple data sources, such as Hadoop Distributed File System (HDFS), Apache Cassandra, relational databases, and many others, without needing to move or transform the data.
+
+Key features of Trino include:
+
+1. **Distributed Query Processing**: Trino employs a distributed architecture where queries are broken down into smaller tasks that are executed in parallel across a cluster of machines. This enables Trino to scale horizontally and process queries efficiently on large datasets.
+
+2. **High Performance**: Trino is optimized for speed and can handle complex queries on petabytes of data with low latency. It achieves this by utilizing in-memory processing, efficient query planning, and advanced optimization techniques.
+
+3. **Connectivity to Various Data Sources**: Trino supports a wide range of data sources and formats, including traditional relational databases (such as MySQL, PostgreSQL, and SQL Server), NoSQL databases (such as Cassandra and MongoDB), cloud storage (like Amazon S3 and Google Cloud Storage), and more. This allows users to query data across diverse data sources using a unified SQL interface.
+
+4. **SQL Compatibility**: Trino supports standard SQL syntax, allowing users to write queries using familiar SQL constructs. It also offers support for advanced SQL features like joins, subqueries, window functions, and aggregations.
+
+5. **Dynamic Scaling**: Trino can dynamically allocate and release computing resources based on query demands, ensuring optimal resource utilization and performance.
+
+6. **Security**: Trino provides robust security features, including authentication, authorization, encryption, and auditing, to ensure the confidentiality and integrity of data.
+
+Overall, Trino is a powerful tool for data analysts, engineers, and scientists who need to perform fast and interactive analytics across a variety of data sources, enabling them to derive valuable insights from their data quickly and efficiently.
+
+```shell
+kubectl apply -f app-manifests/warehouse/trino.yaml
+```
